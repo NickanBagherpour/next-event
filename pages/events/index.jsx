@@ -1,9 +1,16 @@
+import { useRouter } from 'next/router';
+
+import { getAllEvents } from '../../data/dummy-data';
+import EventList from '../../components/events/event-list';
+
 const AllEventsPage = () => {
-  
+  const router = useRouter();
+  const events = getAllEvents();
+
     return (
-        <div>
-        <h1>All Events Page</h1>
-      </div>
+      <>
+        <EventList items={events} />
+      </>
     );
   }
   
